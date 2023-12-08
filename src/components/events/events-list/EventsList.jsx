@@ -1,14 +1,16 @@
 import axios from "axios"
 import EventCard from '../event-card/EventCard'
 import { useEffect, useState } from 'react'
-
+import { setEvents } from '../../../redux/eventsSlice'
+import { useDispatch, useSelector } from 'react-redux'
 const EventsList = ()=>{
-const [events, setEvents] = useState([])
+  const dispatch = useDispatch()
+  const events = useSelector(state=>state.events)
+   
 useEffect(()=>{
   const getEvents = async()=>{
     const events =  await axios.get("http://localhost:3000/get-events")
-    setEvents(events.data.data)
-    console.log(events.data.data)
+    dispatch(setEvents(events.data.data) )
   }
   getEvents()
 },[])
