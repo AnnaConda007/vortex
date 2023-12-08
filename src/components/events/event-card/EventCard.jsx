@@ -1,8 +1,10 @@
  
-const EventCard = ()=>{
+const EventCard = ({title 
+})=>{
   return (
     <> 
- <h2>карточка</h2>
+ <h2> {title}</h2> 
+ 
     </>
   )
 }
