@@ -17,7 +17,7 @@ useEffect(()=>{
  
 return(
   events.map((event,i)=>(
-    <EventCard key={i} title={event.title}/>
+    <EventCard key={i} title={event.title} date = {event.date_start}/>
   ))
 )
 

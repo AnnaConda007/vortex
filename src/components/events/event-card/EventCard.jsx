@@ -1,9 +1,9 @@
  
-const EventCard = ({title 
+const EventCard = ({title , date
 })=>{
   return (
     <> 
- <h2> {title}</h2> 
+ <h2> {date}</h2> 
  
     </>
   )
