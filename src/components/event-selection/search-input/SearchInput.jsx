@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedEvents } from '../../../redux/eventsSlice';
 import { filterEvents } from '../../../utils/sortEvents';
@@ -8,16 +8,15 @@ const SearchInput = () => {
   const events = useSelector(state => state.events.allEvents);
   const dispatch = useDispatch();
 
-  useEffect(() => { 
-    const timer = setTimeout(() => {
-      const filteredEvents = filterEvents({ value: searchValue, events });
-      dispatch(setSelectedEvents(filteredEvents));
-    }, 500); 
-    return () => clearTimeout(timer);
-  }, [searchValue, events, dispatch]);  
-
+  let debounceTimer;
   const handleSearchInputChange = (event) => {
-    setSearchValue(event.target.value.trim());
+    const newValue = event.target.value.trim();
+    setSearchValue(newValue);
+    clearTimeout(debounceTimer); 
+    debounceTimer = setTimeout(() => {
+      const filteredEvents = filterEvents({ value: newValue, events });
+      dispatch(setSelectedEvents(filteredEvents));
+    }, 500);  
   };
 
   return (

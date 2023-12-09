@@ -9,8 +9,7 @@ const eventsSlice = createSlice({
    initialState,
    reducers:{
     setEvents:(state,action)=>{
-      state.allEvents=action.payload,
-      state.selectedEvents=action.payload
+      state.allEvents=action.payload 
      },
      setSelectedEvents:(state,action)=>{ 
       state.selectedEvents=action.payload
