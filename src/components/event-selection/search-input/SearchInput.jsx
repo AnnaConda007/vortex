@@ -1,20 +1,35 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedEvents } from '../../../redux/eventsSlice';
+import { filterEvents } from '../../../utils/sortEvents';
 
-const SearchInput = ()=>{
-  const [searchValue, setSearchValue] = useState("")
+const SearchInput = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const events = useSelector(state => state.events.allEvents);
+  const dispatch = useDispatch();
 
-const handleSearchInputChange = (value)=>{
-  setSearchValue(value)
-}
+  useEffect(() => { 
+    const timer = setTimeout(() => {
+      const filteredEvents = filterEvents({ value: searchValue, events });
+      dispatch(setSelectedEvents(filteredEvents));
+    }, 500); 
+    return () => clearTimeout(timer);
+  }, [searchValue, events, dispatch]);  
 
-return(
-  <>
-  <input type="text" placeholder='искать мероприятие' onChange={(e)=>handleSearchInputChange(e.target.value)} value={searchValue}/>
+  const handleSearchInputChange = (event) => {
+    setSearchValue(event.target.value.trim());
+  };
 
+  return (
+    <>
+      <input
+        type="text"
+        placeholder='искать мероприятие'
+        onChange={handleSearchInputChange}
+        value={searchValue}
+      />
+    </>
+  );
+};
 
-
-  </>
-)
-}
-
-export default SearchInput
+export default SearchInput;

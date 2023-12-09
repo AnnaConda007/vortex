@@ -5,7 +5,7 @@ import { setEvents } from '../../../redux/eventsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 const EventsList = ()=>{
   const dispatch = useDispatch()
-  const events = useSelector(state=>state.events)
+  const events = useSelector(state=>state.events.selectedEvents)
    
 useEffect(()=>{
   const getEvents = async()=>{
