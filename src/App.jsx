@@ -1,17 +1,14 @@
- 
- 
-import EventSelection from './components/event-selection/EventSelection'
-import EventsList from './components/events/events-list/EventsList'
-import { Provider } from "react-redux";
+ import { Provider } from "react-redux";
 import store from './redux/store';
+import { BrowserRouter} from 'react-router-dom' 
+import AppRoutes from './routes/Routes';
 function App() { 
 
   return (
     <Provider store={store}>
-    <> 
-    <EventSelection/>  
-<EventsList/>
-    </>
+    <BrowserRouter> 
+<AppRoutes/>
+    </BrowserRouter>
     </Provider>
   )
 }
