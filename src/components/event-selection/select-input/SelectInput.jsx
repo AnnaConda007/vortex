@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setSelectedEvents } from '../../../redux/eventsSlice'
 import { optionsToChooseSelect } from '../../../constants'
 
- const SelectEvents = ()=>{
+ const SelectInput = ()=>{
  
 const [selected, setSelected] = useState("")
 const allEvents = useSelector(state=>state.events.allEvents)
@@ -31,4 +31,4 @@ return (
 
 }
 
-export default SelectEvents
+export default SelectInput

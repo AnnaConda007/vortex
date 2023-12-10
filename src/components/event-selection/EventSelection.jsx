@@ -1,10 +1,10 @@
 import SearchInput from './search-input/SearchInput'
-import SelectEvents from './select-events/SelectEvents'
+import SelectInput from './select-input/SelectInput'
 
 const EventSelection = ()=>{
   return(<>
   <SearchInput/> 
-    <SelectEvents/>
+    <SelectInput/>
   </>
   )
 }
