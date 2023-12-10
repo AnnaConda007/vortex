@@ -3,7 +3,7 @@ import { filterEventsToDate } from '../../../utils/sortEvents'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSelectedEvents } from '../../../redux/eventsSlice'
 import { optionsToChooseSelect } from '../../../constants'
-
+import styles from "./selectInput.module.css"
  const SelectInput = ()=>{
  
 const [selected, setSelected] = useState("")
@@ -19,9 +19,9 @@ const handleSelect = (key) => {
 }
 
 return (
-  <select value={selected} onChange={(e) => handleSelect(e.target.value)}>
+  <select className={styles.select} value={selected} onChange={(e) => handleSelect(e.target.value)}>
     {Object.keys(optionsToChooseSelect).map((key, i) => (
-      <option key={i} value={key}>
+      <option className={styles.option} key={i} value={key}>
         {optionsToChooseSelect[key]}
       </option>
     ))}

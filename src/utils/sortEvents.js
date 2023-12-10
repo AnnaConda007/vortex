@@ -1,12 +1,19 @@
 
 import { optionsToChooseSelect } from '../constants';
 import { dateComparison } from './date';
-export const filterEventsToTitle = ( value, events ) => {
+ 
+
+export const searchEvent = (value, events) => {
   if (!events || !Array.isArray(events)) return [];
-  return events.filter((event) => 
-    event.title ? event.title.toLowerCase().includes(value.toLowerCase()) : false
-  );
-}
+  const lowercasedValue = value.toLowerCase();
+  return events.filter((event) => {
+    return (
+      (event.title && event.title.toLowerCase().includes(lowercasedValue)) ||
+      (event.location && event.location.toLowerCase().includes(lowercasedValue)) ||
+      (event.description && event.description.toLowerCase().includes(lowercasedValue))  
+    );
+  });
+};
 
 export const filterEventsToDate = (  events , dateType) => {
    if (!events || !Array.isArray(events)) return [];

@@ -1,0 +1,14 @@
+.select{
+  background-color: var(--white-color);
+  font-size: 19px;
+  line-height: 22px;
+  height: 50%;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  outline:none;
+  font-size: 19px;
+  line-height: 22px; 
+}
+ 
+ 

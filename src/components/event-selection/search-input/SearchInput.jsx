@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedEvents } from '../../../redux/eventsSlice';
-import { filterEventsToTitle } from '../../../utils/sortEvents';
+import { searchEvent } from '../../../utils/sortEvents';
+import styles from "./searchInput.module.css"
 
 const SearchInput = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -14,20 +15,26 @@ const SearchInput = () => {
     setSearchValue(newValue);
     clearTimeout(debounceTimer); 
     debounceTimer = setTimeout(() => {
-      const filteredEvents = filterEventsToTitle(  newValue, events  );
+      const filteredEvents = searchEvent(  newValue, events  );
       dispatch(setSelectedEvents(filteredEvents));
     }, 500);  
   };
 
   return (
-    <>
-      <input
+    
+<div className={styles.searchWrap}>
+      <img className={styles.searchImg} src="./public\images\search-icon.png" alt="поиск" />
+      <input className={styles.searchInput}
         type="text"
-        placeholder='искать мероприятие'
+        placeholder='Поиск названий событий, мест, дат'
         onChange={handleSearchInputChange}
         value={searchValue}
       />
-    </>
+    </div>
+ 
+    
+      
+    
   );
 };
 

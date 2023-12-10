@@ -1,12 +1,11 @@
-import React from 'react'; 
-import EventSelection from '../components/event-selection/EventSelection';
+import React from 'react';  
 import EventsList from '../components/events-list/events-list/EventsList';
 import EventPage from './EventPage';
-
+import HeroEvents from '../components/hero-events/HeroEvents';
 const HomePage = () => { 
   return (
     <>
-      <EventSelection />
+    <HeroEvents/>
       <EventsList />
        <EventPage   />
     </>

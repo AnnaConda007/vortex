@@ -1,0 +1,6 @@
+.selectEventsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  height: 70px;
+  justify-content: space-around;
+}

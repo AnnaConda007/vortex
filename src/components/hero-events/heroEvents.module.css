@@ -1,0 +1,32 @@
+.heroSection{
+  width: 100%; 
+}
+
+.heroBaner{
+  padding-top: 180px;
+  padding-bottom: 20px;
+  display: flex;   
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.heroText{ 
+max-width: 455px;
+}
+
+.heroTitle{
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 120%;
+  padding-bottom: 20px;
+}
+.heroDiscription{
+  font-size: 18px;
+    line-height: 30px;
+    color: #28334e;
+}
+.heroImg{
+  width: 470px;
+    height: 335px;  
+}
+

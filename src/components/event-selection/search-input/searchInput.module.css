@@ -1,0 +1,25 @@
+ 
+
+.searchWrap{ 
+  height: 50%;
+  display: flex;
+  align-items: center;
+  max-width: 700px;
+   flex-grow: 1;
+   background-color: var(--white-color);
+  border-radius: 10px;
+}
+.searchImg{
+  width: 20px;
+  padding-right: 5px;
+}
+.searchInput{
+  background-color: transparent;
+  height: 100%;
+  border: none;
+  outline:none;
+  width: 100%;
+  font-size: 19px;
+  line-height: 22px;
+  color: #28334e; 
+}
