@@ -1,0 +1,14 @@
+.title{
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+    line-height: 29px;
+    color: var(--black-color);
+}
+
+.location{
+  cursor: pointer;
+  font-size: 18px;
+    line-height: 29px;
+    color: var(--dark-grey-color);
+}

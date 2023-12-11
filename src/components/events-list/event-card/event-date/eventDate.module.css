@@ -1,0 +1,31 @@
+.dateInfo{ 
+  display: flex;
+  justify-content: space-around; 
+}
+.day{ 
+  background-color: var(--red-color);
+  height: 35px;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: var(--white-color);
+  font-weight: 800;
+    line-height: 18px;
+}
+.date{ 
+  min-width: 80px;
+}
+.mounth{
+  color: var(--red-color);
+  font-weight: 700;
+  line-height: 29px;
+}
+ 
+.additionDateInfo{
+  font-size: 13px;
+  line-height: 21px;
+}
+
+ 

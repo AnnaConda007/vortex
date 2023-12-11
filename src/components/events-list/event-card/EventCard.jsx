@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from "../eventsList.module.css"
+import eventsListStyles from "../eventsList.module.css"
+import styles from "./eventCard.module.css"
 import EventDate from './event-date/EventDate';
+
 const EventCard = ({event}) => {
   const { title, date_start,date_end ,location } = event
   const navigate = useNavigate();
@@ -12,13 +14,12 @@ const EventCard = ({event}) => {
   };
 
   return (
- <div className={`${styles.eventsRow } ${styles.eventsList }` }>
-  <div className={styles.eventsItem}> 
+ <div className={`${eventsListStyles.eventsRow } ${eventsListStyles.eventsList }` }>
+  <div className={eventsListStyles.eventsItem}> 
 <EventDate start={date_start} end={date_end}/>
-
    </div>
-  <div className={styles.eventsItem} onClick={handleClick}>  {title} </div>
-  <div className={styles.eventsItem}> {location} </div>
+  <div className={`${eventsListStyles.eventsItem} ${styles.title}`} onClick={handleClick}>  {title} </div>
+  <div className={`${eventsListStyles.eventsItem} ${styles.location}`}> {location} </div>
  </div>
   )
   
@@ -26,3 +27,5 @@ const EventCard = ({event}) => {
 };
 
 export default EventCard;
+
+

@@ -3,11 +3,14 @@
   max-width: 1120px;
   min-height: 100%; 
   box-sizing: border-box; 
-  margin: 0 auto;
-  background-color: rgb(252, 112, 233);
+  margin: 0 auto; 
 }
 
 :root {
-  --white-color: #eef1f7;  
+  --white-color: #fff;  ;  
+  --grey-color:  #f5f6fa;
+  --dark-grey-color:#28334e;
+  --red-color: #f34f6d;
+  --black-color:#000
 }
 

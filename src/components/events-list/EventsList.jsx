@@ -1,11 +1,11 @@
 import axios from "axios"
-import EventCard from '../event-card/EventCard'
+import EventCard from './event-card/EventCard'
 import { useEffect } from 'react'
-import { setEvents , setSelectedEvents} from '../../../redux/eventsSlice'
+import { setEvents , setSelectedEvents} from '../../redux/eventsSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { filterEventsToDate } from '../../../utils/sortEvents'
-import { optionsToChooseSelect } from '../../../constants'
-import styles from "../eventsList.module.css"
+import { filterEventsToDate } from '../../utils/sortEvents'
+import { optionsToChooseSelect } from '../../constants'
+import styles from "./eventsList.module.css"
 
 const EventsList = ()=>{
   const dispatch = useDispatch()

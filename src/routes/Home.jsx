@@ -1,5 +1,5 @@
 import React from 'react';  
-import EventsList from '../components/events-list/events-list/EventsList';
+import EventsList from '../components/events-list/EventsList';
 import EventPage from './EventPage';
 import HeroEvents from '../components/hero-events/HeroEvents';
 const HomePage = () => { 

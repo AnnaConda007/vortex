@@ -3,5 +3,13 @@
   padding: 0;
 }
 
-:root ,body {
-  height: 100%}
+:root, body { 
+  min-height: 100%;
+}
+
+
+body {
+  background: linear-gradient(to bottom, rgba(199, 160, 247,0.5) , 30%,rgba(248, 163, 230, 0.5), rgb(255, 255, 255));
+  background-size: 100% 500px; 
+  background-repeat: no-repeat; 
+}

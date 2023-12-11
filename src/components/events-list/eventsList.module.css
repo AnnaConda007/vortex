@@ -1,23 +1,31 @@
 .eventsContainer{
-  background-color: aqua;
- 
+  background-color: var(--white-color); 
+  border-radius: 10px;
+  box-shadow:   0px 0px 10px rgba(165, 160, 173, 0.2)
  
 }
 .eventsRow{
   display: flex;
   justify-content: space-between;
+
+  
 }
 
-.eventsRow_head{
-  background-color: blueviolet;
+.eventsRow_head{  
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 25px;
+  font-size: 16px; 
+  color: #a2a9b9; 
+  background-color: var(--grey-color);
+ 
 }
 .eventsItem{
   max-width: 350px;
   width: 30%;  
 }
 .eventsList{
-  background-color: rgb(225, 206, 243);
-  border-bottom: 1px solid ;
+  border-bottom: 1px solid rgb(209, 204, 204);
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
