@@ -1,0 +1,54 @@
+.selectedEventModal{
+  position: fixed; 
+  top: 50%;  
+  left: 50%;  
+  transform: translate(-50%, -50%); 
+  background-color: var(--white-color);
+  background-color: rgb(255, 255, 255);
+  width: 60%;
+  min-width: 400px;
+  padding: 20px;
+}
+
+.title{
+  font-size: 2em; 
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.mainInfo{ 
+display: flex;
+justify-content: space-between;
+align-items: center; 
+ width: 90%;
+max-width: 500px;
+padding-bottom: 20px; 
+flex-wrap: wrap; 
+gap: 5px; 
+}
+ 
+ 
+.imgGeo{
+  width: 15px; 
+  padding: 5px;
+}
+ 
+.location{ 
+  font-size: 20px;
+  font-weight: 700; 
+    color: #6a42e9;
+}
+
+
+.description{
+  font-size: 23px;
+  font-weight: 400;
+   color: #000;
+   padding-bottom: 20px;
+}
+   
+.linkToEvent{
+  font-size: 20px;
+  font-weight: 700; 
+    color: #6a42e9;
+}

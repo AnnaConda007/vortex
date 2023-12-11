@@ -1,6 +1,8 @@
 .dateInfo{ 
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-between;  
+  min-width: 250px; 
+  
 }
 .day{ 
   background-color: var(--red-color);
@@ -12,20 +14,33 @@
   border-radius: 10px;
   color: var(--white-color);
   font-weight: 800;
-    line-height: 18px;
+  line-height: 18px;
 }
-.date{ 
-  min-width: 80px;
+
+.dayHorizont{
+  width: 35px;
 }
+
+
+.date{  
+   min-width: 100px;
+}
+
+.dateHorizont{
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  min-width: 180px;
+}
+
 .mounth{
   color: var(--red-color);
   font-weight: 700;
   line-height: 29px;
+    font-size: 20px;
 }
  
 .additionDateInfo{
-  font-size: 13px;
-  line-height: 21px;
+  font-size: 13px;  
 }
 
- 

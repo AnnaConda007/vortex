@@ -2,7 +2,8 @@
 import { optionsToChooseSelect } from '../constants';
 import { dateComparison } from './date';
  import { formatDate } from './date';
- const reRecordEventDate = (filterdEvents)=>(
+
+ export const reRecordEventDate = (filterdEvents)=>(
   filterdEvents.map((event) => {
     const formattedStartDate = formatDate(event.date_start);
     return {
