@@ -1,29 +1,34 @@
-import styles from "./selectedEvent.module.css" 
-import EventDate from "../events-list/event-card/event-date/EventDate"
-const SelectedEvent = ({eventData})=>{ 
-  const {title, location, description,url,date_start,date_end,ticket_price} = eventData
+import EventCard from '../event-card/EventCard'
+import styles from "./selectedEvent.module.css"
+import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-   return (
-    <div className={styles.selectedEventModal}>
-      <h2 className={styles.title}>{title}</h2>
-      <div className={styles.mainInfo}>
-        <a href={url}   rel="noopener noreferrer">
-          <EventDate start={date_start} end={date_end} horizontally={true}/>
-        </a>
-        <div className={styles.locationContainer}>
-          <a href={url}   rel="noopener noreferrer">
-            <img  className={styles.imgGeo} src="public/images/geoLocation.png" alt="геолокация" />
-            <span className={styles.location}>{location}</span>
-          </a>
-        </div>
-      </div>
-      <p className={styles.description}>
-        {description}
-      </p>
-      <a href={url} className={styles.linkToEvent}> перейти на сайт {title}</a>
-    </div>
-  );
-
+const SelectedEvent = ()=>{
+  const navigate = useNavigate()
+const { etag } = useParams()  ;
+const eventName = (etag || "").replace(/-/g, ' ');  
+const event = useSelector((state) =>
+  state.events.allEvents.find(e => e.title === eventName)
+);
+const handleClose = (e)=>{
+  if (e.target === e.currentTarget) {
+    navigate(`/`);  
+  }
 }
 
+if (!etag || !event) {
+  return null;
+}
+
+
+return(
+  <section className={styles.modalBacking } onClick={handleClose}>
+<section className={styles.selectedEventModal}>
+  <img className={styles.close} src="public\images\close.png" alt="закрыть" onClick={handleClose}/>
+<EventCard event={event}/>
+  </section>
+  </section>
+)
+}
 export default SelectedEvent

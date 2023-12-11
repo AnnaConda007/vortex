@@ -21,7 +21,9 @@ export const searchEvent = (value, events) => {
     return (
       (event.title && event.title.toLowerCase().includes(lowercasedValue)) ||
       (event.location && event.location.toLowerCase().includes(lowercasedValue)) ||
-      (event.description && event.description.toLowerCase().includes(lowercasedValue))  
+      (event.description && event.description.toLowerCase().includes(lowercasedValue)) || (
+        (event.date_start && event.date_start.month.toLowerCase().includes(lowercasedValue))
+      )
     );
   });
   return reRecordEventDate(filtered )
