@@ -1,0 +1,26 @@
+.eventsContainer{
+  background-color: aqua;
+ 
+ 
+}
+.eventsRow{
+  display: flex;
+  justify-content: space-between;
+}
+
+.eventsRow_head{
+  background-color: blueviolet;
+}
+.eventsItem{
+  max-width: 350px;
+  width: 30%;  
+}
+.eventsList{
+  background-color: rgb(225, 206, 243);
+  border-bottom: 1px solid ;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.flexItemHeader{}
+.headerTitle{}

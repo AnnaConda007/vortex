@@ -1,10 +1,11 @@
 import axios from "axios"
 import EventCard from '../event-card/EventCard'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { setEvents , setSelectedEvents} from '../../../redux/eventsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { filterEventsToDate } from '../../../utils/sortEvents'
 import { optionsToChooseSelect } from '../../../constants'
+import styles from "../eventsList.module.css"
 
 const EventsList = ()=>{
   const dispatch = useDispatch()
@@ -25,9 +26,20 @@ useEffect(()=>{
 },[])
  
 return(
-  events.map((event,i)=>(
-    <EventCard key={i} title={event.title} date = {event.date_start}/>
-  ))
+  <>
+  <section className= {styles.eventsContainer}>
+<div className={`${styles.eventsRow } ${ styles.eventsRow_head}`}>
+  <div className={ `${styles.eventsItem} ${styles.eventsItemHeader}`} > <h2 className='headerTitle'>Дата</h2></div>
+  <div className={ `${styles.eventsItem} ${styles.eventsItemHeader}`} > <h2 className='headerTitle'>Название события</h2> </div>
+  <div className={ `${styles.eventsItem} ${styles.eventsItemHeader}`} > <h2 className='headerTitle'>Расположение</h2></div>
+</div>
+{  events.map((event)=>(
+    <EventCard key={event.url} event={event}/>
+  ))}
+  </section>
+ 
+  </>
+
 )
 
 }
