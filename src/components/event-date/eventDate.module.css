@@ -1,15 +1,15 @@
-.dateInfo{ 
+.dateInfo {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
 }
 
-@media(max-width:600px){
-  .dateInfo{ 
-   max-width: 200px; 
+@media (max-width: 600px) {
+  .dateInfo {
+    max-width: 200px;
   }
 }
 
-.day{ 
+.day {
   background-color: var(--red-color);
   height: 35px;
   width: 65px;
@@ -23,30 +23,28 @@
   margin-right: 10px;
 }
 
-.dayHorizont{
- min-width: 35px;
+.dayHorizont {
+  min-width: 35px;
 }
 
-
-.date{  
-   min-width: 100px;
+.date {
+  min-width: 100px;
 }
 
-.dateHorizont{
-  display: flex; 
+.dateHorizont {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   min-width: 180px;
 }
 
-.mounth{
+.mounth {
   color: var(--red-color);
   font-weight: 700;
   line-height: 29px;
-    font-size: 20px;
-}
- 
-.additionDateInfo{
-  font-size: 13px;  
+  font-size: 20px;
 }
 
+.additionDateInfo {
+  font-size: 13px;
+}

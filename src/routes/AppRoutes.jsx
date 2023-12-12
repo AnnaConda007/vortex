@@ -1,6 +1,6 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './Home';  
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './Home'
 
 function AppRoutes() {
   return (
@@ -8,7 +8,7 @@ function AppRoutes() {
       <Route path='/' element={<HomePage />} />
       <Route path='/:etag' element={<HomePage />} />
     </Routes>
-  );
+  )
 }
 
-export default AppRoutes;
+export default AppRoutes

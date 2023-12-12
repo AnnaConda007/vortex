@@ -1,22 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-allEvents:[],
-selectedEvents:[]
+  allEvents: [],
+  selectedEvents: [],
 }
 const eventsSlice = createSlice({
-   name:"events",
-   initialState,
-   reducers:{
-    setEvents:(state,action)=>{
-      state.allEvents=action.payload 
-     },
-     setSelectedEvents:(state,action)=>{ 
-      state.selectedEvents=action.payload
-     }
-   }
-   
-
+  name: 'events',
+  initialState,
+  reducers: {
+    setEvents: (state, action) => {
+      state.allEvents = action.payload
+    },
+    setSelectedEvents: (state, action) => {
+      state.selectedEvents = action.payload
+    },
+  },
 })
-export const {setEvents, setSelectedEvents} = eventsSlice.actions
+export const { setEvents, setSelectedEvents } = eventsSlice.actions
 export default eventsSlice.reducer

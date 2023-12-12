@@ -1,13 +1,11 @@
-import React from 'react'; 
-import SelectedEvent from '../components/selected-event/SelectedEvent';
+import React from 'react'
+import SelectedEvent from '../components/selected-event/SelectedEvent'
 const EventPage = () => {
-  
   return (
     <>
-    <SelectedEvent/>
+      <SelectedEvent />
     </>
-  );
-};
+  )
+}
 
-
-export default EventPage;
+export default EventPage

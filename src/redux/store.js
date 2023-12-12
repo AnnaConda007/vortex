@@ -1,12 +1,12 @@
-import {  configureStore } from '@reduxjs/toolkit'
-import filterSlice from './filterSlice';
+import { configureStore } from '@reduxjs/toolkit'
+import filterSlice from './filterSlice'
 
-import eventsSlice from './eventsSlice';
-const store =  configureStore({
+import eventsSlice from './eventsSlice'
+const store = configureStore({
   reducer: {
     events: eventsSlice,
-    eventFilter:filterSlice
-  }
-});
+    eventFilter: filterSlice,
+  },
+})
 
-export default store;
+export default store

@@ -1,15 +1,15 @@
-import React from 'react';  
-import EventsList from '../components/events-list/EventsList';
-import EventPage from './EventPage';
-import HeroEvents from '../components/hero-events/HeroEvents';
-const HomePage = () => { 
+import React from 'react'
+import EventsList from '../components/events-list/EventsList'
+import EventPage from './EventPage'
+import HeroEvents from '../components/hero-events/HeroEvents'
+const HomePage = () => {
   return (
     <>
-    <HeroEvents/>
+      <HeroEvents />
       <EventsList />
-       <EventPage   />
+      <EventPage />
     </>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

@@ -1,27 +1,25 @@
- 
-
-.searchWrap{ 
+.searchWrap {
   height: 45%;
   display: flex;
   align-items: center;
   max-width: 700px;
-   flex-grow: 1;
-   background-color: var(--white-color);
+  flex-grow: 1;
+  background-color: var(--white-color);
   border-radius: 10px;
   border: 1px solid var(--grey-color);
-  box-shadow:   0px 0px 10px rgba(99, 93, 107, 0.2); 
+  box-shadow: 0px 0px 10px rgba(99, 93, 107, 0.2);
 }
-.searchImg{
+.searchImg {
   width: 20px;
   padding-right: 5px;
 }
-.searchInput{
+.searchInput {
   background-color: transparent;
   height: 100%;
   border: none;
-  outline:none;
+  outline: none;
   width: 100%;
   font-size: 19px;
   line-height: 22px;
-  color: #28334e; 
+  color: #28334e;
 }

@@ -1,16 +1,15 @@
 #root {
   /* основной котнейнер*/
   max-width: 1120px;
-  min-height: 100%; 
-  box-sizing: border-box; 
-  margin: 0 auto;  
+  min-height: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 :root {
-  --white-color: #fff;  ;  
-  --grey-color:  #f5f6fa;
-  --dark-grey-color:#28334e;
+  --white-color: #fff;
+  --grey-color: #f5f6fa;
+  --dark-grey-color: #28334e;
   --red-color: #f34f6d;
-  --black-color:#000
+  --black-color: #000;
 }
-

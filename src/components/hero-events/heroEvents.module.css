@@ -1,42 +1,41 @@
-.heroSection{
-  width: 100%; 
+.heroSection {
+  width: 100%;
 }
 
-.heroBaner{
+.heroBaner {
   padding-top: 100px;
   padding-bottom: 20px;
-  display: flex;   
+  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.heroText{ 
-max-width: 455px;
+.heroText {
+  max-width: 455px;
 }
 
-.heroTitle{
+.heroTitle {
   font-weight: 700;
   font-size: 55px;
   line-height: 120%;
-  padding-bottom: 20px; 
-
+  padding-bottom: 20px;
 }
 
-.heroDiscription{
+.heroDiscription {
   font-size: 18px;
-    line-height: 30px;
-    color: #28334e;
+  line-height: 30px;
+  color: #28334e;
 }
-.heroImg{
-  max-width: 470px; 
+.heroImg {
+  max-width: 470px;
   width: 90%;
 }
 
-@media(max-width:600px){
-  .heroBaner{
-    padding-top: 10px;}
-  .heroTitle{ 
-    font-size: 45px; 
-  
+@media (max-width: 600px) {
+  .heroBaner {
+    padding-top: 10px;
+  }
+  .heroTitle {
+    font-size: 45px;
   }
 }
