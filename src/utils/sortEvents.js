@@ -1,18 +1,8 @@
 
 import { optionsToChooseSelect } from '../constants';
 import { dateComparison } from './date';
- import { formatDate } from './date';
 
- export const reRecordEventDate = (filterdEvents)=>(
-  filterdEvents.map((event) => {
-    const formattedStartDate = formatDate(event.date_start);
-    return {
-      ...event, 
-      date_start: formattedStartDate,  
-      date_end: formattedStartDate,  
-    };
-  })
-)
+
 
 export const searchEvent = (value, events) => {
   if (!events || !Array.isArray(events)) return [];
@@ -26,7 +16,7 @@ export const searchEvent = (value, events) => {
       )
     );
   });
-  return reRecordEventDate(filtered )
+  return filtered
 };
 
 
@@ -35,15 +25,16 @@ export const filterEventsToDate = (  events , dateType) => {
    if (!events || !Array.isArray(events)) return [];
   if(dateType===optionsToChooseSelect.future){
     const filtered = events.filter((event) => 
-    !dateComparison(event.date_end)
+    !dateComparison(event.date_end.mmddyyDate
+      )
     );
-    return reRecordEventDate(filtered)
+    return filtered 
   }else if(dateType===optionsToChooseSelect.past){
     const filtered=  events.filter((event) => 
-    dateComparison(event.date_start)
+    dateComparison(event.date_start.mmddyyDate)
     );
-    return reRecordEventDate(filtered)
-  } else return reRecordEventDate(events) 
+    return filtered 
+  } else return events
 }
 
 

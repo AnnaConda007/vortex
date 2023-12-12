@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { filterEventsToDate } from '../../utils/sortEvents'
 import { optionsToChooseSelect } from '../../constants'
 import styles from "./eventsList.module.css"
-import { reRecordEventDate } from '../../utils/sortEvents'
+import { reRecordEventDate } from '../../utils/date' 
 
 const EventsList = ()=>{
   const dispatch = useDispatch()
@@ -16,10 +16,10 @@ useEffect(()=>{
   const getEvents = async()=>{
     try {
       const events =  await axios.get("http://localhost:3000/get-events")
-      const filtered=  filterEventsToDate(events.data.data,optionsToChooseSelect.future)
-      const reRecordedDate = reRecordEventDate(events.data.data) 
-       dispatch(setEvents(reRecordedDate) )
-       dispatch(setSelectedEvents(filtered) )
+      const eventsWithExtendedDate = reRecordEventDate(events.data.data) 
+      const futureEvents=  filterEventsToDate(eventsWithExtendedDate,optionsToChooseSelect.future) 
+       dispatch(setEvents(eventsWithExtendedDate) )
+       dispatch(setSelectedEvents(futureEvents) )
     } catch (error) {
       console.error(error)
     }
