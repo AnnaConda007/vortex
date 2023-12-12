@@ -1,5 +1,5 @@
 import styles from "./evenCard.module.css" 
-import EventDate from "../events-list/event-card/event-date/EventDate" 
+import EventDate from '../event-date/EventDate';
 const EventCard = ({event})=>{ 
   
   const {title, location, description,url,date_start,date_end,ticket_price} = event

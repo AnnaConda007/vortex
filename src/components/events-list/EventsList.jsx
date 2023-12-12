@@ -1,5 +1,5 @@
 import axios from "axios"
-import EventCard from './event-card/EventCard'
+import EventListItem from './event-item-list/EventListItem'
 import { useEffect } from 'react'
 import { setEvents , setSelectedEvents} from '../../redux/eventsSlice'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,6 +7,7 @@ import { filterEventsToDate } from '../../utils/sortEvents'
 import { optionsToChooseSelect } from '../../constants'
 import styles from "./eventsList.module.css"
 import { reRecordEventDate } from '../../utils/sortEvents'
+
 const EventsList = ()=>{
   const dispatch = useDispatch()
   const events = useSelector(state=>state.events.selectedEvents)
@@ -35,7 +36,7 @@ return(
   <div className={ `${styles.eventsItem} ${styles.eventsItemHeader}`} > <h2 className='headerTitle'>Расположение</h2></div>
 </div>
 {  events.map((event)=>(
-    <EventCard key={event.url} event={event}/>
+    <EventListItem key={event.url} event={event}/>
   ))}
   </section>
  

@@ -1,7 +1,8 @@
 import SearchInput from './search-input/SearchInput'
 import SelectInput from './select-input/SelectInput'
-import styles from "./eventSelection.module.css"
-const EventSelection = ()=>{
+import styles from "./filterPanel.module.css"
+
+const FilterPanel  = ()=>{
   return(
   <div className={styles.selectEventsContainer}>
   <SearchInput/> 
@@ -10,4 +11,4 @@ const EventSelection = ()=>{
   )
 }
 
-export default EventSelection
+export default FilterPanel 

@@ -1,5 +1,5 @@
 import styles from "./heroEvents.module.css"
-import EventSelection from '../event-selection/EventSelection'
+import FilterPanel from '../filter-panel/FilterPanel'
 
 
 const HeroEvents = ()=>{
@@ -12,7 +12,7 @@ const HeroEvents = ()=>{
 </div>
 <img className={styles.heroImg} src="public\images\events-card-mob.webp" alt="Динамичный график предстоящих событий в мире криптовалют" />
       </div>
-<EventSelection/>
+<FilterPanel/>
 
     </section>
   )

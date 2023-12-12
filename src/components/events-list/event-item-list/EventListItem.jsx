@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import eventsListStyles from "../eventsList.module.css"
-import styles from "./eventCard.module.css"
-import EventDate from './event-date/EventDate';
+import styles from "./eventListItem.module.css"
+import EventDate from '../../event-date/EventDate';
 
-const EventCard = ({event}) => {
+const EventListItem = ({event}) => {
   const { title, date_start,date_end ,location } = event
   const navigate = useNavigate();
 
@@ -26,6 +26,6 @@ const EventCard = ({event}) => {
  
 };
 
-export default EventCard;
+export default EventListItem;
 
 
