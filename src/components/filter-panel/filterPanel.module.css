@@ -1,6 +1,7 @@
 .selectEventsContainer{
   display: flex;
   flex-wrap: wrap;
-  height: 70px;
-  justify-content: space-around;
+  height: 80px;
+  justify-content: space-around; 
+  gap: 5px
 }

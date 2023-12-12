@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { optionsToChooseSelect } from '../constants';
 import { setSelectedEvents } from '../redux/eventsSlice';
-import { dateComparison } from '../utils/date';
-import { updateSearchValue, setKeySelectInput } from '../redux/filterSlice';
+import { dateComparison } from '../utils/date'; 
  
 
 export const useDateFilter = ()=>{

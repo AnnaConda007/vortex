@@ -21,13 +21,22 @@ max-width: 455px;
   padding-bottom: 20px; 
 
 }
+
 .heroDiscription{
   font-size: 18px;
     line-height: 30px;
     color: #28334e;
 }
 .heroImg{
-  width: 470px;
-    height: 335px;  
+  max-width: 470px; 
+  width: 90%;
 }
 
+@media(max-width:600px){
+  .heroBaner{
+    padding-top: 10px;}
+  .heroTitle{ 
+    font-size: 45px; 
+  
+  }
+}

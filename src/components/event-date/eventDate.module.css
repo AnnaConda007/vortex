@@ -1,9 +1,14 @@
 .dateInfo{ 
   display: flex;
   justify-content: space-between;  
-  min-width: 250px; 
-  
 }
+
+@media(max-width:600px){
+  .dateInfo{ 
+   max-width: 200px; 
+  }
+}
+
 .day{ 
   background-color: var(--red-color);
   height: 35px;
@@ -15,10 +20,11 @@
   color: var(--white-color);
   font-weight: 800;
   line-height: 18px;
+  margin-right: 10px;
 }
 
 .dayHorizont{
-  width: 35px;
+ min-width: 35px;
 }
 
 

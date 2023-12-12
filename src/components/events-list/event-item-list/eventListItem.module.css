@@ -12,3 +12,9 @@
     line-height: 29px;
     color: var(--dark-grey-color);
 }
+
+@media(max-width:600px){
+  .location{ 
+  text-align: end;
+  }
+}
