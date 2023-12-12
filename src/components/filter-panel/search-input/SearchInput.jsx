@@ -1,22 +1,30 @@
-import { useState } from 'react';
+ import styles from "./searchInput.module.css"
+import { useSearch } from '../../../hooks/useEventFilter';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedEvents } from '../../../redux/eventsSlice';
-import { searchEvent } from '../../../utils/sortEvents';
-import styles from "./searchInput.module.css"
+ import { updateSearchValue } from '../../../redux/filterSlice';
+import { optionsToChooseSelect } from '../../../constants';
+ import { setKeySelectInput } from '../../../redux/filterSlice';
 
 const SearchInput = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const events = useSelector(state => state.events.allEvents);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+  const searchEvent = useSearch() 
+const searchValue= useSelector(state=>state.eventFilter.searchValue)
+const selectInputValue = useSelector((state)=>state.eventFilter.curentSelectKey)
 
-  let debounceTimer;
-  const handleSearchInputChange = (event) => {
-    const newValue = event.target.value.trim();
-    setSearchValue(newValue);
+const handleInputFocus = ()=>{
+  if(selectInputValue!=optionsToChooseSelect.all){
+    dispatch(setKeySelectInput(optionsToChooseSelect.all))}
+}
+
+
+
+   let debounceTimer;
+  const handleSearchInputChange = (event) => { 
+    const value = event.target.value.trim();
+   dispatch(updateSearchValue(value))
     clearTimeout(debounceTimer); 
     debounceTimer = setTimeout(() => {
-      const filteredEvents = searchEvent(  newValue, events  );
-      dispatch(setSelectedEvents(filteredEvents));
+      searchEvent(value)
     }, 500);  
   };
 
@@ -29,6 +37,8 @@ const SearchInput = () => {
         placeholder='Поиск названий событий, мест, дат'
         onChange={handleSearchInputChange}
         value={searchValue}
+        onFocus={handleInputFocus}
+
       />
     </div>
  
@@ -39,3 +49,5 @@ const SearchInput = () => {
 };
 
 export default SearchInput;
+
+ 

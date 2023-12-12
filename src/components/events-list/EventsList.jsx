@@ -1,32 +1,21 @@
-import axios from "axios"
 import EventListItem from './event-item-list/EventListItem'
+import {  useSelector } from 'react-redux' 
+import styles from "./eventsList.module.css" 
+import {useFetchEvents} from '../../hooks/useFetchEvents'
+import { useDateFilter } from '../../hooks/useEventFilter'
 import { useEffect } from 'react'
-import { setEvents , setSelectedEvents} from '../../redux/eventsSlice'
-import { useDispatch, useSelector } from 'react-redux'
-import { filterEventsToDate } from '../../utils/sortEvents'
-import { optionsToChooseSelect } from '../../constants'
-import styles from "./eventsList.module.css"
-import { reRecordEventDate } from '../../utils/date' 
 
 const EventsList = ()=>{
-  const dispatch = useDispatch()
-  const events = useSelector(state=>state.events.selectedEvents)
-   
-useEffect(()=>{
-  const getEvents = async()=>{
-    try {
-      const events =  await axios.get("http://localhost:3000/get-events")
-      const eventsWithExtendedDate = reRecordEventDate(events.data.data) 
-      const futureEvents=  filterEventsToDate(eventsWithExtendedDate,optionsToChooseSelect.future) 
-       dispatch(setEvents(eventsWithExtendedDate) )
-       dispatch(setSelectedEvents(futureEvents) )
-    } catch (error) {
-      console.error(error)
-    }
-  }
-  getEvents()
-},[])
+  useFetchEvents()
+  const dateFilter= useDateFilter()
+  const selectedEvents = useSelector(state=>state.events.selectedEvents)
+  const allEvents = useSelector((state)=>state.events.allEvents)
+  const selectInputValue = useSelector((state)=>state.eventFilter.curentSelectKey)
  
+  useEffect(() => { 
+    dateFilter();
+  }, [selectInputValue,allEvents]);  
+  
 return(
   <>
   <section className= {styles.eventsContainer}>
@@ -35,15 +24,13 @@ return(
   <div className={ `${styles.eventsItem} ${styles.eventsItemHeader}`} > <h2 className='headerTitle'>Название события</h2> </div>
   <div className={ `${styles.eventsItem} ${styles.eventsItemHeader}`} > <h2 className='headerTitle'>Расположение</h2></div>
 </div>
-{  events.map((event)=>(
+{  selectedEvents.map((event)=>(
     <EventListItem key={event.url} event={event}/>
   ))}
   </section>
- 
   </>
 
 )
-
 }
 
 export default EventsList

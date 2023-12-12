@@ -1,27 +1,24 @@
-import { useState } from 'react' 
-import { filterEventsToDate } from '../../../utils/sortEvents'
-import { useDispatch, useSelector } from 'react-redux'
-import { setSelectedEvents } from '../../../redux/eventsSlice'
+  import { useDispatch, useSelector } from 'react-redux'
 import { optionsToChooseSelect } from '../../../constants'
 import styles from "./selectInput.module.css"
+import { setKeySelectInput } from '../../../redux/filterSlice'
+ import { updateSearchValue } from '../../../redux/filterSlice'
  const SelectInput = ()=>{
- 
-const [selected, setSelected] = useState("")
-const allEvents = useSelector(state=>state.events.allEvents)
 const dispatch = useDispatch()
+const selectInputValue = useSelector((state)=>state.eventFilter.curentSelectKey)
+
 
 const handleSelect = (key) => {
   if (!key) return;
-  setSelected(key); 
-  const selectedOption = optionsToChooseSelect[key];   
-  const filtered = filterEventsToDate(allEvents, selectedOption);
-  dispatch(setSelectedEvents(filtered));
-}
+   dispatch(setKeySelectInput(key)) 
+   dispatch(updateSearchValue(""))
+
+} 
 
 return (
-  <select className={styles.select} value={selected} onChange={(e) => handleSelect(e.target.value)}>
+  <select className={styles.select} value={selectInputValue} onChange={(e) => handleSelect(e.target.value)}>
     {Object.keys(optionsToChooseSelect).map((key, i) => (
-      <option className={styles.option} key={i} value={key}>
+      <option className={styles.option} key={i} value={optionsToChooseSelect[key]}>
         {optionsToChooseSelect[key]}
       </option>
     ))}
@@ -32,3 +29,4 @@ return (
 }
 
 export default SelectInput
+

@@ -1,12 +1,12 @@
 import moment from 'moment/moment';
 
-export const dateComparison = (dateEvent)=>{ //12/12/12
+export const dateComparison = (dateEvent)=>{ 
   const date = moment(dateEvent, ' MM/DD/YYYY'); 
   return date.isBefore(moment().startOf('day'));
 }
  
 
-export const formatDate = (dateEvent) => {   // 12/12/12
+export const formatDate = (dateEvent) => {  
   const date = moment(dateEvent, 'MM/DD/YYYY'); 
   const day = date.format('D');  
   const month = date.format('MMMM');  
