@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './heroEvents.module.css'
 import FilterPanel from '../filter-panel/FilterPanel'
-
 const HeroEvents = () => {
   return (
     <section className={styles.heroSection}>
@@ -16,7 +15,7 @@ const HeroEvents = () => {
         </div>
         <img
           className={styles.heroImg}
-          src='public\images\events-card-mob.webp'
+          src='/images/events-card-mob.webp'
           alt='Динамичный график предстоящих событий в мире криптовалют'
         />
       </div>

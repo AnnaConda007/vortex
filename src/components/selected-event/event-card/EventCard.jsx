@@ -17,7 +17,7 @@ const EventCard = ({ event }) => {
         </a>
         <div className={styles.locationContainer}>
           <a href={url}>
-            <img className={styles.imgGeo} src='public/images/geoLocation.png' alt='геолокация' />
+            <img className={styles.imgGeo} src='images/geoLocation.png' alt='геолокация' />
             <span className={styles.location}>{location}</span>
           </a>
         </div>

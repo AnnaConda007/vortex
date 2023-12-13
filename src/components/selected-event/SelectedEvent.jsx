@@ -23,12 +23,7 @@ const SelectedEvent = () => {
   return (
     <section className={styles.modalBacking} onClick={handleClose}>
       <section className={styles.selectedEventModal}>
-        <img
-          className={styles.close}
-          src='public\images\close.png'
-          alt='закрыть'
-          onClick={handleClose}
-        />
+        <img className={styles.close} src='/images/close.png' alt='закрыть' onClick={handleClose} />
         <EventCard event={event} />
       </section>
     </section>
