@@ -3,11 +3,11 @@
 }
 
 .heroBaner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding-top: 100px;
   padding-bottom: 20px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .heroText {
@@ -15,26 +15,28 @@
 }
 
 .heroTitle {
+  padding-bottom: 20px;
   font-weight: 700;
   font-size: 55px;
   line-height: 120%;
-  padding-bottom: 20px;
 }
 
 .heroDiscription {
+  color: #28334e;
   font-size: 18px;
   line-height: 30px;
-  color: #28334e;
-}
-.heroImg {
-  max-width: 470px;
-  width: 90%;
 }
 
-@media (max-width: 600px) {
+.heroImg {
+  width: 90%;
+  max-width: 470px;
+}
+
+@media (width <= 600px) {
   .heroBaner {
     padding-top: 10px;
   }
+
   .heroTitle {
     font-size: 45px;
   }

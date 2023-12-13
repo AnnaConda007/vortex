@@ -1,26 +1,27 @@
 .dateInfo {
   display: flex;
-  justify-content: space-between;
+  place-content: center space-between;
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .dateInfo {
     max-width: 200px;
   }
 }
 
 .day {
-  background-color: var(--red-color);
-  height: 35px;
-  width: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  width: 65px;
+  height: 35px;
+  margin-right: 10px;
+  margin-left: 10px;
   color: var(--white-color);
   font-weight: 800;
   line-height: 18px;
-  margin-right: 10px;
+  background-color: var(--red-color);
+  border-radius: 10px;
 }
 
 .dayHorizont {
@@ -41,10 +42,11 @@
 .mounth {
   color: var(--red-color);
   font-weight: 700;
-  line-height: 29px;
   font-size: 20px;
+  line-height: 29px;
 }
 
 .additionDateInfo {
+  padding-top: 5px;
   font-size: 13px;
 }

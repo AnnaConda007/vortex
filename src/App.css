@@ -1,8 +1,9 @@
 #root {
-  /* основной котнейнер*/
+  box-sizing: border-box;
+
+  /* основной котнейнер */
   max-width: 1120px;
   min-height: 100%;
-  box-sizing: border-box;
   margin: 0 auto;
 }
 

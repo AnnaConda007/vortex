@@ -1,3 +1,4 @@
+import React from 'react'
 import EventCard from './event-card/EventCard'
 import styles from './selectedEvent.module.css'
 import { useNavigate } from 'react-router-dom'
@@ -22,7 +23,12 @@ const SelectedEvent = () => {
   return (
     <section className={styles.modalBacking} onClick={handleClose}>
       <section className={styles.selectedEventModal}>
-        <img className={styles.close} src='public\images\close.png' alt='закрыть' onClick={handleClose} />
+        <img
+          className={styles.close}
+          src='public\images\close.png'
+          alt='закрыть'
+          onClick={handleClose}
+        />
         <EventCard event={event} />
       </section>
     </section>

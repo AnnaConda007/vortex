@@ -1,11 +1,16 @@
+import React from 'react'
 import styles from './evenCard.module.css'
 import EventDate from '../../event-date/EventDate'
+
 const EventCard = ({ event }) => {
   const { title, location, description, url, date_start, date_end, ticket_price } = event
 
   return (
-    <div className={styles.selectedEventModal}>
-      <h2 className={styles.title}>{title}</h2>
+    <div className={styles.eventCard}>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.title}> {ticket_price && ticket_price} </p>
+      </div>
       <div className={styles.mainInfo}>
         <a href={url}>
           <EventDate start={date_start} end={date_end} horizontally={true} />

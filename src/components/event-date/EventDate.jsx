@@ -1,8 +1,9 @@
-import styles from './eventDate.module.css'
-const EventDate = ({ start, end, horizontally = false }) => {
-  const startDay = start.date
-  const endDay = end.date
-  const oneDayEvent = startDay === endDay
+import React from 'react';
+import styles from './eventDate.module.css';
+const EventDate = ({start, end, horizontally = false}) => {
+  const startDay = start.date;
+  const endDay = end.date;
+  const oneDayEvent = startDay === endDay;
 
   return (
     <div className={styles.dateInfo}>
@@ -14,7 +15,7 @@ const EventDate = ({ start, end, horizontally = false }) => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EventDate
+export default EventDate;

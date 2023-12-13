@@ -1,19 +1,23 @@
 .title {
-  cursor: pointer;
+  color: var(--black-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 29px;
-  color: var(--black-color);
+  cursor: pointer;
 }
 
 .location {
-  cursor: pointer;
+  color: var(--dark-grey-color);
   font-size: 18px;
   line-height: 29px;
-  color: var(--dark-grey-color);
+  cursor: pointer;
 }
 
-@media (max-width: 600px) {
+.date {
+  cursor: pointer;
+}
+
+@media (width <= 600px) {
   .location {
     text-align: end;
   }

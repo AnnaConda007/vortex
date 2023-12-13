@@ -1,24 +1,24 @@
 .modalBacking {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(31, 26, 26, 0.4);
   top: 0;
   left: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(31 26 26 / 40%);
 }
 
 .selectedEventModal {
-  background-color: var(--white-color);
-  width: 60%;
-  min-width: 400px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: end;
+  width: 100%;
+  max-width: 600px;
   padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 10px;
 }
 
 .close {

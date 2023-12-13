@@ -1,23 +1,23 @@
-.selectedEventModal {
+.eventCard {
   width: 90%;
   padding: 20px;
 }
 
 .title {
-  font-size: 2em;
-  font-weight: bold;
   padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 2em;
 }
 
 .mainInfo {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
   align-items: center;
+  justify-content: space-between;
   width: 90%;
   max-width: 500px;
   padding-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 5px;
 }
 
 .imgGeo {
@@ -26,20 +26,32 @@
 }
 
 .location {
-  font-size: 20px;
-  font-weight: 700;
   color: #6a42e9;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .description {
-  font-size: 23px;
-  font-weight: 400;
-  color: #000;
   padding-bottom: 20px;
+  color: #000;
+  font-weight: 400;
+  font-size: 23px;
 }
 
 .linkToEvent {
-  font-size: 20px;
-  font-weight: 700;
   color: #6a42e9;
+  font-weight: 700;
+  font-size: 20px;
 }

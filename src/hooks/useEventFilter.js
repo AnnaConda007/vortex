@@ -23,15 +23,12 @@ export const useDateFilter = () => {
 export const useSearch = () => {
   const dispatch = useDispatch()
   const allEvents = useSelector((state) => state.events.allEvents)
-  const selectValue = useSelector((state) => state.eventFilter.curentSelectKey)
-
   return (searchValue) => {
     const lowercasedValue = searchValue.toLowerCase()
     const filtered = allEvents.filter((event) => {
       return (
         (event.title && event.title.toLowerCase().includes(lowercasedValue)) ||
         (event.location && event.location.toLowerCase().includes(lowercasedValue)) ||
-        (event.description && event.description.toLowerCase().includes(lowercasedValue)) ||
         (event.date_start && event.date_start.month.toLowerCase().includes(lowercasedValue))
       )
     })
