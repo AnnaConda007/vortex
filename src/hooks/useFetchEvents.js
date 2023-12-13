@@ -11,7 +11,7 @@ export const useFetchEvents = () => {
     const getEvents = async () => {
       try {
         const events = await axios.get(getEventsEndPoint)
-        const eventsWithExtendedDate = reRecordEventDate(events.data.data)
+        const eventsWithExtendedDate = reRecordEventDate(events.data)
         dispatch(setEvents(eventsWithExtendedDate))
       } catch (error) {
         console.error(error)

@@ -4,6 +4,6 @@ export const optionsToChooseSelect = {
   past: 'прошедешие мероприятия',
 }
 
-const serverUrl = 'http://localhost:3000/'
+const serverUrl = 'https://vortexserver-93ag.onrender.com/'
 const endPoint = 'get-events'
 export const getEventsEndPoint = `${serverUrl}${endPoint}`
